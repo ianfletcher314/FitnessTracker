@@ -15,7 +15,7 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect("mongodb+srv://ianfletcher314:<password>@cluster0.3hxep.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", { useNewUrlParser: true });
+mongoose.connect("mongodb+srv://ianfletcher314:xdh9me4h46w@cluster0.3hxep.mongodb.net/fitness_db?retryWrites=true&w=majority", { useNewUrlParser: true });
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
