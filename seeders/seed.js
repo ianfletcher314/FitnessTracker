@@ -6,6 +6,7 @@ mongoose.connect('mongodb://localhost/workout', {
   useFindAndModify: false,
   useUnifiedTopology: true,
 });
+console.log(db)
 
 const workoutSeed = [
   {
@@ -135,3 +136,4 @@ db.Workout.deleteMany({})
     console.error(err);
     process.exit(1);
   });
+
