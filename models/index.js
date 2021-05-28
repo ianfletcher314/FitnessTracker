@@ -1,7 +1,4 @@
-// CONVERT THIS TO CODE THAT WORKS FOR US 
 const mongoose = require("mongoose");
-
-
 const Schema = mongoose.Schema;
 
 function extendSchema (Schema, definition, options) {
@@ -58,7 +55,13 @@ const resistance = extendSchema(exercise, {
         required: true
       },
 
-  });
+});
+const cardio = extendSchema(exercise, {
+    distance: {
+        type: Number,
+        required: true
+      },
+});
 
 
 
@@ -70,6 +73,9 @@ UserSchema.methods.lastUpdatedDate = function() {
 
 const exerciseModel = mongoose.model("Exercise", exercise);
 const resistanceModel = mongoose.model('Resistance', resistance);
+const cardioModel = mongoose.model('Cardio', cardio);
 
 module.exports = exerciseModel;
 module.exports = resistanceModel;
+module.exports = cardioModel;
+
