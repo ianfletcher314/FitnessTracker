@@ -3,6 +3,7 @@ const db = require("../models");
 
 router.get("/exercise", (req, res) => {
     // res.sendFile()
+    
 });
 router.get("/stats", (req, res) => {
  
