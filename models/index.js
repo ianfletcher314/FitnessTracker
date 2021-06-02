@@ -65,5 +65,6 @@ workoutSchema.methods.lastUpdatedDate = function () {
 const exercises = mongoose.model("exercises", exercisesSchema);
 const Workout = mongoose.model("Workout", workoutSchema);
 
-module.exports = exercises;
+// module.exports = exercises;
 module.exports ={ Workout}
+// module.exports = Workout
