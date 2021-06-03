@@ -50,52 +50,18 @@ const workoutSchema = new Schema({
             required: true
         },
     }]
-
+},    
+{
+    toJSON: {
+        virtuals: true 
+        }
 })
 
-// const exercisesSchema = extendSchema(workoutSchema, {
-//     type: {
-//         type: String,
-//         trim: true,
-//         required: "Type is Required"
-//     },
-//     name: {
-//         type: String,
-//         trim: true,
-//         required: "Name is Required"
-//     },
-
-//     duration: {
-//         type: Number,
-//         required: true
-//     },
-//     weight: {
-//         type: Number,
-//         required: true
-//     },
-//     reps: {
-//         type: Number,
-//         required: true
-//     },
-
-//     sets: {
-//         type: Number,
-//         required: true
-//     },
-
-//     distance: {
-//         type: Number,
-//         required: true
-//     },
-
-   
-// });
-
-// workoutSchema.methods.lastUpdatedDate = function () {
-//     this.lastUpdated = Date.now();
-
-//     return this.lastUpdated;
-// };
+workoutSchema.virtual("totalDuration").get(function(){
+    return this.exercises.reduce((total, {duration}) => {
+        return total + duration
+    }, 0)
+})
 
 // const exercises = mongoose.model("exercises", exercisesSchema);
 const Workout = mongoose.model("Workout", workoutSchema);
